@@ -43,7 +43,6 @@ class SavingsAccountTest {
     @BeforeEach
     void setUp() {
         account = new SavingsAccount(OWNER_NAME);
-        //CHECKSTYLE WARNING IS PRESENT
     }
 
     @Test
@@ -62,8 +61,8 @@ class SavingsAccountTest {
 
     @Test
     void testValidDeposit() throws Exception {
-        account.deposit(VALID_DEPOSIT); //CHECKSTYLE WARNING IS PRESENT
-        int expectedBalance = VALID_DEPOSIT; //CHECKSTYLE WARNING IS PRESENT
+        account.deposit(VALID_DEPOSIT);
+        int expectedBalance = VALID_DEPOSIT;
         System.out.println("Balance after valid deposit: "
                            + account.getBalance());
         assertEquals(expectedBalance, account.getBalance());
@@ -73,7 +72,7 @@ class SavingsAccountTest {
     void testDepositZeroAmount() {
         Exception exception = assertThrows(
             Exception.class,
-            () -> account.deposit(ZERO_DEPOSIT) //CHECKSTYLE WARNING IS PRESENT
+            () -> account.deposit(ZERO_DEPOSIT)
         );
         System.out.println("Deposit zero amount exception: "
                            + exception.getMessage());
@@ -86,7 +85,6 @@ class SavingsAccountTest {
         Exception exception = assertThrows(
             Exception.class,
             () -> account.deposit(NEGATIVE_DEPOSIT)
-            //CHECKSTYLE WARNING IS PRESENT
         );
         System.out.println("Deposit negative amount exception: "
                            + exception.getMessage());
@@ -96,10 +94,9 @@ class SavingsAccountTest {
 
     @Test
     void testWithdrawSufficientBalance() throws Exception {
-        account.deposit(VALID_DEPOSIT); //CHECKSTYLE WARNING IS PRESENT
-        account.withdraw(SUFFICIENT_WITHDRAW); //CHECKSTYLE WARNING IS PRESENT
+        account.deposit(VALID_DEPOSIT);
+        account.withdraw(SUFFICIENT_WITHDRAW);
         int expectedBalance = VALID_DEPOSIT - SUFFICIENT_WITHDRAW;
-        //CHECKSTYLE WARNING IS PRESENT
         System.out.println("Balance after withdrawal: "
                            + account.getBalance());
         assertEquals(expectedBalance, account.getBalance());
@@ -107,11 +104,10 @@ class SavingsAccountTest {
 
     @Test
     void testWithdrawInsufficientBalance() throws Exception {
-        account.deposit(VALID_DEPOSIT); //CHECKSTYLE WARNING IS PRESENT
+        account.deposit(VALID_DEPOSIT);
         Exception exception = assertThrows(
             Exception.class,
             () -> account.withdraw(INSUFFICIENT_WITHDRAW)
-            //CHECKSTYLE WARNING IS PRESENT
         );
         System.out.println("Withdraw insufficient balance exception: "
                            + exception.getMessage());
@@ -124,7 +120,6 @@ class SavingsAccountTest {
         Exception exception = assertThrows(
             Exception.class,
             () -> account.withdraw(NEGATIVE_WITHDRAW)
-            //CHECKSTYLE WARNING IS PRESENT
         );
         System.out.println("Withdraw negative amount exception: "
                            + exception.getMessage());
@@ -138,7 +133,6 @@ class SavingsAccountTest {
         Exception exception = assertThrows(
             Exception.class,
             () -> account.deposit(DEPOSIT_WHEN_FROZEN)
-            //CHECKSTYLE WARNING IS PRESENT
         );
         System.out.println("Deposit when frozen exception: "
                            + exception.getMessage());
@@ -148,12 +142,11 @@ class SavingsAccountTest {
 
     @Test
     void testWithdrawWhenFrozen() throws Exception {
-        account.deposit(VALID_DEPOSIT); //CHECKSTYLE WARNING IS PRESENT
+        account.deposit(VALID_DEPOSIT);
         account.freezeAccount();
         Exception exception = assertThrows(
             Exception.class,
             () -> account.withdraw(WITHDRAW_AFTER_UNFREEZE)
-            //CHECKSTYLE WARNING IS PRESENT
         );
         System.out.println("Withdraw when frozen exception: "
                            + exception.getMessage());
@@ -163,13 +156,11 @@ class SavingsAccountTest {
 
     @Test
     void testUnfreezeAndWithdraw() throws Exception {
-        account.deposit(VALID_DEPOSIT); //CHECKSTYLE WARNING IS PRESENT
+        account.deposit(VALID_DEPOSIT);
         account.freezeAccount();
         account.unfreezeAccount();
         account.withdraw(WITHDRAW_AFTER_UNFREEZE);
-        //CHECKSTYLE WARNING IS PRESENT
         int expectedBalance = VALID_DEPOSIT - WITHDRAW_AFTER_UNFREEZE;
-        //CHECKSTYLE WARNING IS PRESENT
         System.out.println("Balance after unfreeze & withdrawal: "
                            + account.getBalance());
         assertEquals(expectedBalance, account.getBalance());
@@ -199,7 +190,6 @@ class SavingsAccountTest {
         System.out.println("Main output:\n" + output);
         assertTrue(output.contains("=== Test Cases ==="));
         assertTrue(output.contains("Owner: " + OWNER_NAME));
-        //CHECKSTYLE WARNING IS PRESENT
         assertTrue(output.contains("Balance: 1000"));
 
         System.setOut(originalOut);
