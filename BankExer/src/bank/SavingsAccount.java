@@ -145,7 +145,7 @@ public class SavingsAccount extends AbstractBankAccount {
             // Case 12
             System.out.println("Case #12: Multiple transactions");
             SavingsAccount acc2 = new SavingsAccount("Maria");
-            acc2.deposit(DEPOSIT_VALID_AMOUNT); 
+            acc2.deposit(DEPOSIT_VALID_AMOUNT);
             acc2.withdraw(WITHDRAW_SUFFICIENT_AMOUNT);
             acc2.withdraw(WITHDRAW_AFTER_UNFREEZE);
             System.out.println("Maria's balance: " + acc2.getBalance());
