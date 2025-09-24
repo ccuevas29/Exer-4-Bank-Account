@@ -63,7 +63,7 @@ public class SavingsAccount extends AbstractBankAccount {
 
             // Case 2
             System.out.println("Case #2: Deposit with valid amount");
-            acc1.deposit(DEPOSIT_VALID_AMOUNT);
+            acc1.deposit(DEPOSIT_VALID_AMOUNT); //CHECKSTYLE WARNING IS PRESENT
             System.out.println("Balance: " + acc1.getBalance());
             System.out.println();
 
@@ -71,6 +71,7 @@ public class SavingsAccount extends AbstractBankAccount {
             System.out.println("Case #3: Deposit with zero amount");
             try {
                 acc1.deposit(DEPOSIT_ZERO_AMOUNT);
+                //CHECKSTYLE WARNING IS PRESENT
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -80,6 +81,7 @@ public class SavingsAccount extends AbstractBankAccount {
             System.out.println("Case #4: Deposit with negative amount");
             try {
                 acc1.deposit(DEPOSIT_NEGATIVE_AMOUNT);
+              //CHECKSTYLE WARNING IS PRESENT
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -88,6 +90,7 @@ public class SavingsAccount extends AbstractBankAccount {
             // Case 5
             System.out.println("Case #5: Withdraw with sufficient funds");
             acc1.withdraw(WITHDRAW_SUFFICIENT_AMOUNT);
+            //CHECKSTYLE WARNING IS PRESENT
             System.out.println("Balance: " + acc1.getBalance());
             System.out.println();
 
@@ -95,6 +98,7 @@ public class SavingsAccount extends AbstractBankAccount {
             System.out.println("Case #6: Withdraw with insufficient funds");
             try {
                 acc1.withdraw(WITHDRAW_INSUFFICIENT_AMOUNT);
+              //CHECKSTYLE WARNING IS PRESENT
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -104,6 +108,7 @@ public class SavingsAccount extends AbstractBankAccount {
             System.out.println("Case #7: Withdraw with negative amount");
             try {
                 acc1.withdraw(WITHDRAW_NEGATIVE_AMOUNT);
+              //CHECKSTYLE WARNING IS PRESENT
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -114,6 +119,7 @@ public class SavingsAccount extends AbstractBankAccount {
             acc1.freezeAccount();
             try {
                 acc1.deposit(DEPOSIT_WHEN_FROZEN);
+              //CHECKSTYLE WARNING IS PRESENT
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -123,6 +129,7 @@ public class SavingsAccount extends AbstractBankAccount {
             System.out.println("Case #9: Withdraw when frozen");
             try {
                 acc1.withdraw(WITHDRAW_AFTER_UNFREEZE);
+              //CHECKSTYLE WARNING IS PRESENT
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -132,6 +139,7 @@ public class SavingsAccount extends AbstractBankAccount {
             System.out.println("Case #10: Unfreeze account and withdraw");
             acc1.unfreezeAccount();
             acc1.withdraw(WITHDRAW_AFTER_UNFREEZE);
+          //CHECKSTYLE WARNING IS PRESENT
             System.out.println("Balance: " + acc1.getBalance());
             System.out.println();
 
@@ -145,9 +153,11 @@ public class SavingsAccount extends AbstractBankAccount {
             // Case 12
             System.out.println("Case #12: Multiple transactions");
             SavingsAccount acc2 = new SavingsAccount("Maria");
-            acc2.deposit(DEPOSIT_VALID_AMOUNT);
+            acc2.deposit(DEPOSIT_VALID_AMOUNT); //CHECKSTYLE WARNING IS PRESENT
             acc2.withdraw(WITHDRAW_SUFFICIENT_AMOUNT);
+            //CHECKSTYLE WARNING IS PRESENT
             acc2.withdraw(WITHDRAW_AFTER_UNFREEZE);
+            //CHECKSTYLE WARNING IS PRESENT
             System.out.println("Maria's balance: " + acc2.getBalance());
             System.out.println();
 
